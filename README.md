@@ -1,6 +1,8 @@
-# goware
+<p align="center"><img src="https://cdn.discordapp.com/attachments/1299876491395600544/1300163159658594485/image_3.png?ex=671fd6cd&is=671e854d&hm=cb12fbb8dc16e35694b16dbb8663ed6283f122e2aafa64f786f8466b6227b0a3&" width="50%"/></p><br/>
+<p align="center">Various detection mechanisms for anti-debugging and anti-virtual machine (VM) environments.</p>
+<p align="center">made in golang.</p>
 
-goware is a simple malware project written in Go. It includes various detection mechanisms for anti-debugging and anti-virtual machine (VM) environments.
+</p><br/><br/>
 
 # Anti VM
 ## Triage

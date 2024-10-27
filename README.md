@@ -5,6 +5,9 @@
 </p><br/><br/>
 
 # Anti VM
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/330ef80d745a47658f25df5d8ac36d69)](https://app.codacy.com/gh/9dl/goware?utm_source=github.com&utm_medium=referral&utm_content=9dl/goware&utm_campaign=Badge_Grade)
+
 ## Triage
 | Platform                      | Background Detection | Serials Detection | Date/time  | Screenshot                       |
 |-------------------------------|----------------------|-------------------|------------|----------------------------------|

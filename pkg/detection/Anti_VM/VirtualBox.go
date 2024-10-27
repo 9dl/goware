@@ -5,8 +5,6 @@ import (
 	"strings"
 )
 
-// BIOS; VirtualBox
-
 type BaseBoard struct {
 	Product      string
 	Manufacturer string

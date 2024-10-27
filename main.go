@@ -1,38 +1,11 @@
 package main
 
 import (
-	"encoding/base64"
 	"fmt"
 	"goware/pkg/detection/Anti_Debug"
 	"goware/pkg/detection/Anti_VM"
 	"goware/pkg/modules"
-	"io/ioutil"
-	"os/exec"
 )
-
-func getWallpaper() (string, error) {
-	cmd := exec.Command("powershell", "-command", "(Get-ItemProperty 'HKCU:\\Control Panel\\Desktop').Wallpaper")
-	output, err := cmd.Output()
-	if err != nil {
-		return "", err
-	}
-	return string(output), nil
-}
-
-func EncodeToBase64(data []byte) string {
-	return base64.StdEncoding.EncodeToString(data)
-}
-
-func ReadImage(filePath string) ([]byte, error) {
-	return ioutil.ReadFile(filePath)
-}
-
-func TruncateBase64(base64String string) string {
-	if len(base64String) > 64 {
-		return base64String[:64] // Get only the first 64 characters
-	}
-	return base64String
-}
 
 func main() {
 	fmt.Println()

@@ -2,7 +2,26 @@
 
 goware is a simple malware project written in Go. It includes various detection mechanisms for anti-debugging and anti-virtual machine (VM) environments.
 
-+ currently in development.
+# Anti VM
+## Triage
+| Platform                      | Background Detection | Serials Detection | Date/time  | Screenshot                       |
+|-------------------------------|----------------------|-------------------|------------|----------------------------------|
+| Windows 10 (2004) x64         | **Triggered**        | **Triggered**     | 26/10/2024 | ![](./images/img_2.png)        |
+| Windows 10 (LTSC 2021) x64    | **Triggered**        | **Triggered**     | 26/10/2024 | ![](./images/img_1.png)        |
+| Windows 11 (21H2) x64         | **Triggered**        | **Triggered**     | 26/10/2024 | ![](./images/img.png)          |
+## VMWare
+| Platform              | Diskdrive Detection | BIOS Detection | Model Detection | Date/time  | Screenshot              |
+|-----------------------|---------------------|----------------|-----------------|------------|-------------------------|
+| Windows 11 (24H2) x64 | **Triggered**       | **Triggered**  | **Triggered**   | 27/10/2024 | ![](./images/img_3.png) |
+| Windows 10 (22H2) x64 | **Triggered**       | **Triggered**  | **Triggered**   | 27/10/2024 | ![](./images/img_5.png) |
+## Windows SandBox
+| Platform              | Username Detection | Date/time    | Screenshot              |
+|-----------------------|--------------------|--------------|-------------------------|
+| Windows 11 (24H2) x64 | **Triggered**      | 27/10/2024   | ![](./images/img_4.png) |
+## VirtualBox
+| Platform              | Motherboard Detection | Discdrive Detection | BIOS Detection | Date/time    | Screenshot              |
+|-----------------------|-----------------------|---------------------|----------------|--------------|-------------------------|
+| Windows 11 (24H2) x64 | **Triggered**         | **Triggered**       | **Triggered**  | 27/10/2024   | ![](./images/img_6.png) |
 
 ## Installation
 

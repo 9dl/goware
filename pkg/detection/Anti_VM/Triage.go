@@ -1,6 +1,9 @@
 package Anti_VM
 
 import (
+	"bytes"
+	"encoding/base64"
+	"io/ioutil"
 	"os/exec"
 	"strings"
 )
@@ -111,6 +114,30 @@ func checkCPU() (bool, int) {
 	return Index >= 1, Index
 }
 
+func getWallpaper() (string, error) {
+	cmd := exec.Command("powershell", "-command", "(Get-ItemProperty 'HKCU:\\Control Panel\\Desktop').Wallpaper")
+	output, err := cmd.Output()
+	if err != nil {
+		return "", err
+	}
+	return string(output), nil
+}
+
+func EncodeToBase64(data []byte) string {
+	return base64.StdEncoding.EncodeToString(data)
+}
+
+func ReadImage(filePath string) ([]byte, error) {
+	return ioutil.ReadFile(filePath)
+}
+
+func TruncateBase64(base64String string) string {
+	if len(base64String) > 64 {
+		return base64String[:64] // Get only the first 64 characters
+	}
+	return base64String
+}
+
 func Triage() bool {
 	checks := []func() (bool, int){
 		checkDiskdrive,
@@ -128,4 +155,13 @@ func Triage() bool {
 	}
 
 	return totalIndex >= 5
+}
+
+func TriageV2() bool {
+	wallpaperPath, _ := getWallpaper()
+	wallpaperPath = string(bytes.TrimSpace([]byte(wallpaperPath)))
+	imageBytes, _ := ReadImage(wallpaperPath)
+	base64String := EncodeToBase64(imageBytes)
+	truncatedBase64 := TruncateBase64(base64String)
+	return truncatedBase64 == "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAwMDAwMDA0ODg0SExETEhsYFhYYGygd"
 }
